@@ -15,8 +15,9 @@ volume = {132},
 pages = {108980},
 year = {2022},
 doi = {https://doi.org/10.1016/j.patcog.2022.108980}
-},
-
+}
+'''
+'''
 @article{CHEN2023110706,
 author = {Chongqing Chen and Dezhi Han and Xiang Shen},
 title = {CLVIN: Complete language-vision interaction network for visual question answering},
