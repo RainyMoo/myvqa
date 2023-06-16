@@ -4,7 +4,7 @@ This repository is the implementation of [CLVIN: Complete language-vision intera
 ## Acknowledgements
 - [openvqa](https://github.com/MILVLG/openvqa)
 
-- ## Citation
+## Citation
 if CLVIN and CAAN are helpful for your research or you wish to refer the baseline results published here, we'd really appreciate it if you could cite this paper:
 ```
 @article{CHEN2022108980,
