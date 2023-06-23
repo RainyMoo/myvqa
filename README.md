@@ -22,6 +22,7 @@ doi = {https://doi.org/10.1016/j.patcog.2022.108980}
 author = {Chongqing Chen and Dezhi Han and Xiang Shen},
 title = {CLVIN: Complete language-vision interaction network for visual question answering},
 journal = {Knowledge-Based Systems},
+volume = {275},
 pages = {110706},
 year = {2023},
 doi = {https://doi.org/10.1016/j.knosys.2023.110706}
