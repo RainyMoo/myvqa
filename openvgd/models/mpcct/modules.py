@@ -665,9 +665,9 @@ class SGA(nn.Module):
 # ---- MAC Layers Cascaded by Encoder-Decoder ----
 # ------------------------------------------------
 
-class MTCCT_ED(nn.Module):
+class MPCCT_ED(nn.Module):
     def __init__(self, __C):
-        super(MTCCT_ED, self).__init__()
+        super(MPCCT_ED, self).__init__()
         self.__C = __C
         self.enc_list = nn.ModuleList([SA(__C) for _ in range(6)])
         self.dec_list = nn.ModuleList([SGA(__C) for _ in range(6)])
