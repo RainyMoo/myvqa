@@ -1,11 +1,11 @@
 # Pytorch Implementation of CLVIN and CAAN
-This repository is the implementation of [CLVIN: Complete language-vision interaction network for visual question answering](https://doi.org/10.1016/j.knosys.2023.110706) and [CAAN: Context-Aware attention network for visual question answering](https://doi.org/10.1016/j.patcog.2022.108980)
+This repository is the implementation of [CLVIN: Complete language-vision interaction network for visual question answering](https://doi.org/10.1016/j.knosys.2023.110706), [CAAN: Context-Aware attention network for visual question answering](https://doi.org/10.1016/j.patcog.2022.108980) and [MPCCT: Multimodal vision-language learning paradigm with context-based compact Transformer](https://doi.org/10.1016/j.patcog.2023.110084)
 
 ## Acknowledgements
 - [openvqa](https://github.com/MILVLG/openvqa)
 
 ## Citation
-if CLVIN and CAAN are helpful for your research or you wish to refer the baseline results published here, we'd really appreciate it if you could cite this paper:
+if CLVIN, CAAN and MPCCT are helpful for your research or you wish to refer the baseline results published here, we'd really appreciate it if you could cite this paper:
 ```
 @article{CHEN2022108980,
 author = {Chongqing Chen and Dezhi Han and Chin-Chen Chang},
@@ -26,5 +26,16 @@ volume = {275},
 pages = {110706},
 year = {2023},
 doi = {https://doi.org/10.1016/j.knosys.2023.110706}
+}
+```
+```
+@article{CHEN2024110084,
+author = {Chongqing Chen and Dezhi Han and Chin-Chen Chang},
+title = {MPCCT: Multimodal vision-language learning paradigm with context-based compact Transformer},
+journal = {Pattern Recognition},
+volume = {147},
+pages = {110084},
+year = {2024},
+doi = {https://doi.org/10.1016/j.patcog.2023.110084}
 }
 ```
