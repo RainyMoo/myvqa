@@ -18,11 +18,11 @@ class BaseCfgs(PATH):
         self.GPU = '0'
         
         # For MTCCT to choose language_global_context style: 'max', 'avg', and 'att'
-        #self.Lang_Global = 'max'
+        self.Lang_Global = 'max'
         
         # For MTCCT to choose wether fusion global information g, default = False
         #self.gF = 'False'
-        #self.REL = 'False'
+        self.REL = 'False'
            
         # For CAAN choose context style: 'None', 'deep', 'global', and 'deep-global' ,etc.
         self.USE_CONTEXT = 'None'
