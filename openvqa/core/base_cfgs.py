@@ -101,6 +101,10 @@ class BaseCfgs(PATH):
             
             'clevr': {
                 'GRID_FEAT_SIZE': (196, 1024),
+            },
+            'vqa_grid': {
+                'FRCN_FEAT_SIZE': (64, 2048),
+                'BBOX_FEAT_SIZE': (100, 5),
             }
         }
 
