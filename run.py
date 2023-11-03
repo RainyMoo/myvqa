@@ -23,22 +23,25 @@ def parse_args():
                       choices=[
                            'caan_small',
                            'caan_large',
-                           'clvin'
+                           'clvin',
+                           'mpcct',
                            ]
                         ,
                       help='{'
                            'caan_small,'
                            'caan_large,'
                            'clvin,'
+                           'mpcct,'
                            '}'
                         ,
                       type=str, required=True)
 
     parser.add_argument('--DATASET', dest='DATASET',
-                      choices=['vqa','clevr'],
+                      choices=['vqa','clevr','vqa_grid'],
                       help='{'
                            'vqa,'
                            'clevr,'
+                           'vqa_grid'
                            '}'
                         ,
                       type=str, required=True)
@@ -123,6 +126,16 @@ def parse_args():
                       choices=['None', 'deep', 'global', 'deep-global'],
                       help='choose context style for CAAN',
                       type=str)
+    
+    parser.add_argument('--LG', dest='Lang_Global',
+                      choices=['max', 'avg', 'att'],
+                      help='choose global language feature style for MTCCT',
+                      type=str)
+    
+    parser.add_argument('--REL', dest='REL',
+                      choices=['True', 'False'],
+                      help='choose whether REL style for CAANplus',
+                      type=str) 
     
     parser.add_argument('--Comp', dest='COMPACT',
                       choices=['False', 'True'],
