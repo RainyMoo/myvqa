@@ -17,10 +17,10 @@ class BaseCfgs(PATH):
         # If use multi-gpu training, you can set e.g.'0, 1, 2' instead
         self.GPU = '0'
         
-        # For MTCCT to choose language_global_context style: 'max', 'avg', and 'att'
+        # For MPCCT to choose language_global_context style: 'max', 'avg', and 'att'
         self.Lang_Global = 'max'
         
-        # For MTCCT to choose wether fusion global information g, default = False
+        # For MPCCT to choose wether fusion global information g, default = False
         #self.gF = 'False'
         self.REL = 'False'
            
