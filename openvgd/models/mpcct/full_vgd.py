@@ -1,9 +1,9 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from openvgd.models.mtcct.modules_vgd import AttFlat, LayerNorm, MTCCT_ED
-from openvgd.models.mtcct.attflat import AttFlat_img, AttFlat_lang
-from openvgd.models.mtcct.position import RegionAbsolutePosition, RegionRelationalEmbedding
+from openvgd.models.mpcct.modules_vgd import AttFlat, LayerNorm, MPCCT_ED
+from openvgd.models.mpcct.attflat import AttFlat_img, AttFlat_lang
+from openvgd.models.mpcct.position import RegionAbsolutePosition, RegionRelationalEmbedding
 
 class Net_Full(nn.Module):
     def __init__(self, __C, init_dict):
@@ -38,7 +38,7 @@ class Net_Full(nn.Module):
         self.imgfeat_linear = nn.Linear(imgfeat_linear_size, __C.HSIZE)
         self.bbox_linear = nn.Linear(6, __C.HSIZE)
 
-        self.backnone = MTCCT_ED(__C)
+        self.backnone = MPCCT_ED(__C)
         self.attflat_x = AttFlat(__C)
         self.attfc_y = nn.Linear(__C.HSIZE, __C.ATTFLAT_OUT_SIZE)
         self.proj_norm = LayerNorm(__C.ATTFLAT_OUT_SIZE)
