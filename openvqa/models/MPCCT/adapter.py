@@ -48,16 +48,6 @@ class Adapter(BaseAdapter):
             #imgfeat_linear_size += __C.BBOXFEAT_EMB_SIZE
         self.Abs = PositionEmbeddingSine(256, normalize=True)
         
-    def gqa_init(self, __C):
-        imgfeat_linear_size = __C.FEAT_SIZE['gqa']['FRCN_FEAT_SIZE'][1]
-        if __C.USE_BBOX_FEAT:
-            self.bbox_linear = nn.Linear(6, __C.BBOXFEAT_EMB_SIZE)
-            imgfeat_linear_size += __C.BBOXFEAT_EMB_SIZE
-        self.frcn_linear = nn.Linear(imgfeat_linear_size, __C.HIDDEN_SIZE)
-        self.linear_abs = nn.Linear(6, __C.HIDDEN_SIZE)
-
-        if __C.USE_AUX_FEAT:
-            self.grid_linear = nn.Linear(__C.FEAT_SIZE['gqa']['GRID_FEAT_SIZE'][1], __C.HIDDEN_SIZE)
 
     def clevr_init(self, __C):
         self.grid_linear = nn.Linear(__C.FEAT_SIZE['clevr']['GRID_FEAT_SIZE'][1], __C.HIDDEN_SIZE)
@@ -85,7 +75,6 @@ class Adapter(BaseAdapter):
                                              wave_len=1000, 
                                              trignometric_embedding=True) # (bs, num, num, 6)
         
-
         return img_feat, img_feat_mask, region_abs, region_rel
 
     def vqa_grid_forward(self, feat_dict):
@@ -105,38 +94,6 @@ class Adapter(BaseAdapter):
 
         return img_feat, img_feat_mask, grid_abs, grid_rel 
     
-    def gqa_forward(self, feat_dict):
-        frcn_feat = feat_dict['FRCN_FEAT']
-        bbox_feat = feat_dict['BBOX_FEAT']
-        grid_feat = feat_dict['GRID_FEAT']
-        w_feat = feat_dict['W_FEAT']
-        h_feat = feat_dict['H_FEAT']
-        w_feat = w_feat.unsqueeze(1)
-        h_feat = h_feat.unsqueeze(1)
-        wh_feat = torch.cat((w_feat, h_feat), dim=-1)
-
-        img_feat_mask = make_mask(frcn_feat)
-        region_abs = RegionAbsolutePosition(bbox_feat, wh_feat) # (bs, num, 6)
-        region_rel = RegionRelationalEmbedding(bbox_feat)
-
-        if self.__C.USE_BBOX_FEAT:
-            #bbox_feat = self.bbox_proc(bbox_feat, wh_feat)
-            bbox_feat = self.bbox_linear(region_abs)
-            frcn_feat = torch.cat((frcn_feat, bbox_feat), dim=-1)
-        img_feat = self.frcn_linear(frcn_feat)
-
-        if self.__C.USE_AUX_FEAT:
-            grid_feat_mask = make_mask(grid_feat)
-            img_feat_mask = torch.cat((img_feat_mask, grid_feat_mask), dim=-1)
-            grid_feat = self.grid_linear(grid_feat)
-            img_feat = torch.cat((img_feat, grid_feat), dim=1)
-
-        #region_abs = RegionAbsolutePosition(bbox_feat, wh_feat) # (bs, num, 6)
-        region_abs = self.linear_abs(region_abs)   
-        #region_rel = RegionRelationalEmbedding(bbox_feat) # (bs, num, num, 6)
-
-        return img_feat, img_feat_mask, region_abs, region_rel
-
 
     def clevr_forward(self, feat_dict):
         grid_feat = feat_dict['GRID_FEAT']            
