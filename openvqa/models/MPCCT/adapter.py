@@ -9,7 +9,7 @@ from openvqa.core.base_dataset import BaseAdapter
 from openvqa.utils.make_mask import make_mask
 from openvqa.ops.fc import FC, MLP
 from openvqa.ops.layer_norm import LayerNorm
-from openvqa.models.MTCCT.position import RegionAbsolutePosition, GridRelationalEmbedding, PositionEmbeddingSine, RegionRelationalEmbedding
+from openvqa.models.MPCCT.position import RegionAbsolutePosition, GridRelationalEmbedding, PositionEmbeddingSine, RegionRelationalEmbedding
 import torch.nn.functional as F
 import math
 
