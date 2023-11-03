@@ -426,7 +426,7 @@ class SGA(nn.Module):
 
 class MPCCT_ED(nn.Module):
     def __init__(self, __C):
-        super(MTCCT_ED, self).__init__()
+        super(MPCCT_ED, self).__init__()
 
         self.enc_list = nn.ModuleList([SA(__C) for _ in range(__C.LAYER)])
         self.dec_list = nn.ModuleList([SGA(__C) for _ in range(__C.LAYER)])
