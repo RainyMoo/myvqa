@@ -1,11 +1,11 @@
 # Pytorch Implementation of CLVIN, CAAN and MPCCT
-This repository is the implementation of [CLVIN: Complete language-vision interaction network for visual question answering](https://doi.org/10.1016/j.knosys.2023.110706), [CAAN: Context-Aware attention network for visual question answering](https://doi.org/10.1016/j.patcog.2022.108980) and [MPCCT: Multimodal vision-language learning paradigm with context-based compact Transformer](https://doi.org/10.1016/j.patcog.2023.110084)
+This repository is the implementation of [CLVIN: Complete language-vision interaction network for visual question answering](https://doi.org/10.1016/j.knosys.2023.110706), [CAAN: Context-Aware attention network for visual question answering](https://doi.org/10.1016/j.patcog.2022.108980), and [MPCCT: Multimodal vision-language learning paradigm with context-based compact Transformer](https://doi.org/10.1016/j.patcog.2023.110084)
 
 ## Acknowledgements
 - [openvqa](https://github.com/MILVLG/openvqa)
 
 ## Citation
-if CLVIN, CAAN and MPCCT are helpful for your research or you wish to refer the baseline results published here, we'd really appreciate it if you could cite this paper:
+if CLVIN, CAAN, and MPCCT are helpful for your research or you wish to refer the baseline results published here, we'd really appreciate it if you could cite this paper:
 ```
 @article{CHEN2022108980,
 author = {Chongqing Chen and Dezhi Han and Chin-Chen Chang},
