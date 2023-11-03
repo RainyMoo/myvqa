@@ -14,18 +14,14 @@ class PATH:
     def init_path(self):
 
         self.DATA_ROOT = './data'
-        self.VIT_DATA_ROOT = '../../../shenxiang/sda/ccq/vit_feat'
         # self.DATA_ROOT = '/data/datasets'
         # self.DATA_ROOT = '/data1/datasets'
         # self.DATA_ROOT = '/home/features'
-        self.BERT_PATH = './data/vqa/bert_tensor'
 
         self.DATA_PATH = {
             'vqa': self.DATA_ROOT + '/vqa',
-            'gqa': self.DATA_ROOT + '/gqa',
             'clevr': self.DATA_ROOT + '/clevr',
-            'vqa_grid': self.DATA_ROOT + '/vqa_grid',
-            'vqa_vit': self.VIT_DATA_ROOT + '/vqa_vit'
+            'vqa_grid': self.DATA_ROOT + '/vqa_grid'
         }
 
 
@@ -37,16 +33,6 @@ class PATH:
                 'test': self.DATA_PATH['vqa'] + '/feats' + '/test2015',
             },
             
-            'vqa_vit': {
-                'train': self.DATA_PATH['vqa_vit'] + '/feats' + '/train2014',
-                'val': self.DATA_PATH['vqa_vit'] + '/feats' + '/val2014',
-                'test': self.DATA_PATH['vqa_vit'] + '/feats' + '/test2015',
-            },            
-            
-            'gqa': {
-                'default-frcn': self.DATA_PATH['gqa'] + '/feats' + '/gqa-frcn',
-                'default-grid': self.DATA_PATH['gqa'] + '/feats' + '/gqa-grid',
-            },
             'clevr': {
                 'train': self.DATA_PATH['clevr'] + '/feats' + '/train',
                 'val': self.DATA_PATH['clevr'] + '/feats' + '/val',
@@ -60,13 +46,6 @@ class PATH:
         }
         
         
-        self.SPATIALS_PATH = {
-            'vqa': {
-                'train': self.DATA_PATH['vqa'] + '/graph' + '/train2014',
-                'val': self.DATA_PATH['vqa'] + '/graph' + '/val2014',
-                'test': self.DATA_PATH['vqa'] + '/graph' + '/test2015',
-            }
-        }
 
 
 
@@ -80,16 +59,7 @@ class PATH:
                 'vg-anno': self.DATA_PATH['vqa'] + '/raw' + '/VG_annotations.json',
                 'test': self.DATA_PATH['vqa'] + '/raw' + '/v2_OpenEnded_mscoco_test2015_questions.json',
             },
-            'gqa': {
-                'train': self.DATA_PATH['gqa'] + '/raw' + '/questions1.2/train_balanced_questions.json',
-                'val': self.DATA_PATH['gqa'] + '/raw' + '/questions1.2/val_balanced_questions.json',
-                'testdev': self.DATA_PATH['gqa'] + '/raw' + '/questions1.2/testdev_balanced_questions.json',
-                'test': self.DATA_PATH['gqa'] + '/raw' + '/questions1.2/submission_all_questions.json',
-                'val_all': self.DATA_PATH['gqa'] + '/raw' + '/questions1.2/val_all_questions.json',
-                'testdev_all': self.DATA_PATH['gqa'] + '/raw' + '/questions1.2/testdev_all_questions.json',
-                'train_choices': self.DATA_PATH['gqa'] + '/raw' + '/eval/train_choices',
-                'val_choices': self.DATA_PATH['gqa'] + '/raw' + '/eval/val_choices.json',
-            },
+
             'clevr': {
                 'train': self.DATA_PATH['clevr'] + '/raw' + '/questions/CLEVR_train_questions.json',
                 'val': self.DATA_PATH['clevr'] + '/raw' + '/questions/CLEVR_val_questions.json',
@@ -113,23 +83,12 @@ class PATH:
                 'val': 'val',
                 'test': 'test',
             },
-            'gqa': {
-                'train': '',
-                'val': 'testdev',
-                'test': 'test',
-            },
             'clevr': {
                 'train': '',
                 'val': 'val',
                 'test': 'test',
             },
             'vqa_grid': {
-                'train': '',
-                'val': 'val',
-                'test': 'test',
-            },
-            
-            'vqa_vit': {
                 'train': '',
                 'val': 'val',
                 'test': 'test',
