@@ -6,8 +6,8 @@
 from openvqa.utils.make_mask import make_mask
 from openvqa.ops.fc import FC, MLP
 from openvqa.ops.layer_norm import LayerNorm
-from openvqa.models.MTCCT.mtcct import MTCCT_ED
-from openvqa.models.MTCCT.adapter import Adapter
+from openvqa.models.MPCCT.mtcct import MPCCT_ED
+from openvqa.models.MPCCT.adapter import Adapter
 
 import torch.nn as nn
 import torch.nn.functional as F
@@ -130,7 +130,7 @@ class Net(nn.Module):
 
         self.adapter = Adapter(__C)
 
-        self.backbone = MTCCT_ED(__C)
+        self.backbone = MPCCT_ED(__C)
 
         # Flatten to vector
         self.attflat_img = AttFlat(__C)
