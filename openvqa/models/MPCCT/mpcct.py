@@ -424,7 +424,7 @@ class SGA(nn.Module):
 # ------------------------------------------------
 
 
-class MTCCT_ED(nn.Module):
+class MPCCT_ED(nn.Module):
     def __init__(self, __C):
         super(MTCCT_ED, self).__init__()
 
