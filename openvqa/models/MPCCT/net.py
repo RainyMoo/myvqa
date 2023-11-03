@@ -141,7 +141,7 @@ class Net(nn.Module):
         self.proj = nn.Linear(__C.FLAT_OUT_SIZE, answer_size)
 
 
-    def forward(self, frcn_feat, grid_feat, bbox_feat, w_feat, h_feat, spa_graph, ques_ix, ques_tensor):
+    def forward(self, frcn_feat, grid_feat, bbox_feat, w_feat, h_feat, ques_ix):
 
         # Pre-process Language Feature
         ori_lang_feat_mask = make_mask(ques_ix.unsqueeze(2))
@@ -171,7 +171,7 @@ class Net(nn.Module):
             global_x_in = self.att_lang(lang_feat, ori_lang_feat_mask)
             lang_feat = torch.cat((lang_feat, global_x_in.unsqueeze(1)), 1)
             
-        img_feat, img_feat_mask, region_abs, region_rel  = self.adapter(frcn_feat, grid_feat, bbox_feat, w_feat, h_feat, spa_graph)
+        img_feat, img_feat_mask, region_abs, region_rel  = self.adapter(frcn_feat, grid_feat, bbox_feat, w_feat, h_feat)
 
         # Backbone Framework
         
