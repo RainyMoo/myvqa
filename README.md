@@ -3,7 +3,8 @@ This repository is the implementation of [CLVIN: Complete language-vision intera
 
 ## Acknowledgements
 - [openvqa](https://github.com/MILVLG/openvqa)
-- [MMnas](https://github.com/MILVLG/MMnasNet)
+- [mmnas](https://github.com/MILVLG/mmnas)
+- [TRAR](https://github.com/rentainhe/TRAR-VQ)
 
 ## Citation
 if CLVIN, CAAN, and MPCCT are helpful for your research or you wish to refer the baseline results published here, we'd really appreciate it if you could cite this paper:
