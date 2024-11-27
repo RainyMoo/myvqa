@@ -41,3 +41,14 @@ year = {2024},
 doi = {https://doi.org/10.1016/j.patcog.2023.110084}
 }
 ```
+```
+@article{CHEN2025125817,
+author = {Chongqing Chen and Dezhi Han and Zihan Guo and Chin-Chen Chang},
+title = {Towards bias-aware visual question answering: Rectifying and mitigating comprehension biases},
+journal = {Expert Systems with Applications},
+volume = {264},
+pages = {125817},
+year = {2025},
+doi = {https://doi.org/10.1016/j.eswa.2024.125817}
+}
+```
